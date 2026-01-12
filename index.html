@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Álbum de Amor - 5 Meses</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Música de fondo -->
+    <audio id="background-music" loop preload="metadata">
+        <source src="assets/musica/nuestra-cancion.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Controles de música -->
+    <div class="music-controls">
+        <button id="toggle-music" class="music-btn">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
+
+    <!-- Portada -->
+    <div class="cover" id="cover">
+        <div class="cover-content">
+            <div class="love-title">
+                <h1>5 Meses de Amor</h1>
+                <div class="heart-divider">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+                <p class="subtitle">Cada mes, un nuevo capítulo de nuestra historia</p>
+            </div>
+            
+            <!-- Contador de Tiempo -->
+            <div class="time-counter">
+                <h3><i class="far fa-clock"></i> Llevamos juntos:</h3>
+                <div class="counter-wrapper">
+                    <div class="counter-item">
+                        <div class="counter-number" id="counter-months">5</div>
+                        <div class="counter-label">Meses</div>
+                    </div>
+                    <div class="counter-separator">:</div>
+                    <div class="counter-item">
+                        <div class="counter-number" id="counter-days">0</div>
+                        <div class="counter-label">Días</div>
+                    </div>
+                    <div class="counter-separator">:</div>
+                    <div class="counter-item">
+                        <div class="counter-number" id="counter-hours">0</div>
+                        <div class="counter-label">Horas</div>
+                    </div>
+                </div>
+                <p class="start-date" id="start-date"></p>
+            </div>
+            
+            <!-- Botón para abrir álbum -->
+            <button id="open-album" class="btn-open-album">
+                <span class="btn-text">Ver Nuestros 5 Meses</span>
+                <span class="btn-icon"><i class="fas fa-book-heart"></i></span>
+            </button>
+        </div>
+        
+        <!-- Corazones flotantes -->
+        <div class="floating-hearts" id="floating-hearts"></div>
+    </div>
+
+    <!-- Álbum de Recuerdos -->
+    <div class="album-container" id="album-container">
+        <!-- Controles de Navegación SUPERIOR -->
+        <div class="navigation-bar">
+            <button id="back-to-cover" class="nav-btn back-btn">
+                <i class="fas fa-home"></i>
+                <span>Portada</span>
+            </button>
+            
+            <div class="nav-controls">
+                <button id="prev-page" class="nav-btn prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                    <span>Anterior</span>
+                </button>
+                
+                <div class="page-indicator">
+                    <span class="current-page" id="current-page">1</span>
+                    <span class="separator">/</span>
+                    <span class="total-pages" id="total-pages">5</span>
+                    <span class="page-text">Mes</span>
+                </div>
+                
+                <button id="next-page" class="nav-btn next-btn">
+                    <span>Siguiente</span>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Contador en navegación -->
+            <div class="nav-counter">
+                <i class="fas fa-heartbeat"></i>
+                <span id="nav-days">150</span> días de amor
+            </div>
+        </div>
+
+        <!-- ÁLBUM DE 5 MESES -->
+        <div class="album-pages" id="album-pages">
+            
+            <!-- ========== MES 1: SEPTIEMBRE 2025 ========== -->
+            <div class="memory-page active" data-page="1" data-month="1">
+                <div class="memory-content">
+                    <div class="memory-header month-1">
+                        <div class="month-badge">Mes 1</div>
+                        <h2><i class="fas fa-seedling"></i> Nuestro Primer Mes</h2>
+                        <div class="memory-date">Septiembre 2025 - El Comienzo</div>
+                    </div>
+                    
+                    <div class="memory-body">
+                        <!-- Galería de fotos -->
+                        <div class="photo-gallery">
+                            <div class="gallery-header">
+                                <h3><i class="fas fa-images"></i> Los Primeros Momentos</h3>
+                                <div class="photo-count">4 fotos de nuestro inicio</div>
+                            </div>
+                            
+                            <div class="gallery-grid">
+                                <!-- Foto 1 -->
+                                <div class="gallery-item main-photo">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes1/01.jpeg" 
+                                             alt="Nuestra primera foto juntos" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">¡Hola mundo! 🌎</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 2 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes1/02.jpeg" 
+                                             alt="Primera cita" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Primera cita 💕</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 3 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes1/03.jpeg" 
+                                             alt="Primera salida" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Explorando juntos 🚶‍♀️🚶‍♂️</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 4 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes1/04.jpeg" 
+                                             alt="Nuestra Pelicula" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">La pelicula que unio este amor :3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Texto del recuerdo -->
+                        <div class="memory-text">
+                            <div class="text-content">
+                                <h4>El mes donde todo comenzó...</h4>
+                                <p>Septiembre del 2025 quedará grabado en mi memoria para siempre. Fue el mes donde nuestros caminos se cruzaron y decidimos caminar juntos. Cada día era una nueva aventura, descubriéndonos el uno al otro.</p>
+                                <p>Recuerdo la emoción de responderte esa nota para la pelicula, los nervios de la primera llamada, y la magia de la primera cita. Todo era nuevo, todo era emocionante, y cada momento contigo se sentía especial.</p>
+                                <div class="memory-stats">
+                                    <div class="stat">
+                                        <i class="fas fa-heart"></i>
+                                        <span>Primeros "te quiero"</span>
+                                    </div>
+                                    <div class="stat">
+                                        <i class="fas fa-mug-hot"></i>
+                                        <span>+5 cafés compartidos</span>
+                                    </div>
+                                    <div class="stat">
+                                        <i class="fas fa-moon"></i>
+                                        <span>Noches de llamadas hasta tarde</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="memory-footer">
+                            <div class="milestone">
+                                <i class="fas fa-trophy"></i>
+                                <span>Logro: Superar la timidez inicial</span>
+                            </div>
+                            <div class="song">
+                                <i class="fas fa-music"></i>
+                                <span>Canción del mes: "Quisiera- Pasabordo"</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== MES 2: OCTUBRE 2025 ========== -->
+            <div class="memory-page" data-page="2" data-month="2">
+                <div class="memory-content">
+                    <div class="memory-header month-2">
+                        <div class="month-badge">Mes 2</div>
+                        <h2><i class="fas fa-heart"></i> Conociéndonos Más</h2>
+                        <div class="memory-date">Octubre 2025 - Creciendo Juntos</div>
+                    </div>
+                    
+                    <div class="memory-body">
+                        <!-- Galería de fotos -->
+                        <div class="photo-gallery">
+                            <div class="gallery-header">
+                                <h3><i class="fas fa-images"></i> Aventuras de Octubre</h3>
+                                <div class="photo-count">5 momentos especiales</div>
+                            </div>
+                            
+                            <div class="gallery-grid">
+                                <!-- Foto 1 -->
+                                <div class="gallery-item main-photo">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes2/01.jpeg" 
+                                             alt="Nuestra salida a jugar voleibol" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Me acuerdo de pegarte en la cara y hacerte curacion para tu nariz :C</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 2 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes2/02.jpeg" 
+                                             alt="Nuestra primera noche juntos" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">El comienzo de miles de arrunchis</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 3 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes2/03.jpeg" 
+                                             alt="Nuestro viaje a villeta" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Que bonito fue poder compartir un viaje tan hermoso</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 4 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes2/04.jpeg" 
+                                             alt="Primer regalo" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Apenas me pagaron, solo pense en consentir a mi princesa hermosa</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 5 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes2/05.jpeg" 
+                                             alt="Primer sitio que te gustaba" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Me senti super enamorado que me hayas llevado a tu lugar seguro</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Texto del recuerdo -->
+                        <div class="memory-text">
+                            <div class="text-content">
+                                <h4>Descubriendo nuestras pasiones...</h4>
+                                <p>Octubre fue el mes donde empezamos a conocernos de verdad. Descubrí que te encanta las cosas con chocolate, y que te encanta pasar el tiempo viendo series y peliculas, ademas de darme cuenta de que eres una persona super energica.</p>
+                                <p>Cada salida era una oportunidad para aprender algo nuevo sobre ti. Empezamos a crear nuestras propias tradiciones: los fines de semana de salir,cafés de la tarde, los incontables llamadas despues de trabajar y alegrarme al escuchar tu voz</p>
+                                <blockquote class="love-quote">
+                                    "En octubre descubrí que tu mano cabe perfectamente en la mía, y que tu risa es mi sonido favorito."
+                                </blockquote>
+                            </div>
+                        </div>
+                        
+                        <div class="memory-footer">
+                            <div class="milestone">
+                                <i class="fas fa-hands"></i>
+                                <span>Primer viaje juntos: ¡A la montaña!</span>
+                            </div>
+                            <div class="inside-joke">
+                                <i class="fas fa-laugh"></i>
+                                <span>Broma interna: "Te voy a quitar ese piercing de la nariz"</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== MES 3: NOVIEMBRE 2025 ========== -->
+            <div class="memory-page" data-page="3" data-month="3">
+                <div class="memory-content">
+                    <div class="memory-header month-3">
+                        <div class="month-badge">Mes 3</div>
+                        <h2><i class="fas fa-home"></i> Creando Nuestro Espacio</h2>
+                        <div class="memory-date">Noviembre 2025 - Construyendo Hogar</div>
+                    </div>
+                    
+                    <div class="memory-body">
+                        <!-- Galería de fotos -->
+                        <div class="photo-gallery">
+                            <div class="gallery-header">
+                                <h3><i class="fas fa-images"></i> Momentos Cotidianos</h3>
+                                <div class="photo-count">6 recuerdos de noviembre</div>
+                            </div>
+                            
+                            <div class="gallery-grid">
+                                <!-- Foto 1 -->
+                                <div class="gallery-item main-photo">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes3/01.jpeg" 
+                                             alt="Ya te quedabas en casa" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Tu mami ya nos daba permiso para que vinieras a mi casa </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 2 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes3/02.jpeg" 
+                                             alt="Construyendo el spiderman que me regalaste" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Me costo trabajo pero pude avanzar mucho contigo en llamada </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 3 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes3/03.jpeg" 
+                                             alt="Yo y Kira" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Ya era re amigo de Kirita linda </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 4 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes3/04.jpeg" 
+                                             alt="Ganaste el torneo del colegio" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Me acuerdo recibir tu imagen que ganaste y sentirme el hombre mas orgullos del mundo</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 5 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes3/05.jpeg" 
+                                             alt="Primer AirBnb juntos" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Sin duda uno de nuestros mejores planes amor</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 6 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes3/06.jpeg" 
+                                             alt="Tus primeras cartas" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Ese dia me regalaste los dibujos y cartas mas hermosas del planeta donde quede flechado con lo amorosa que puedes ser ✨</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Texto del recuerdo -->
+                        <div class="memory-text">
+                            <div class="text-content">
+                                <h4>La belleza de lo cotidiano...</h4>
+                                <p>Noviembre nos enseñó que el amor no solo está en los grandes momentos, sino en las pequeñas rutinas que construimos juntos. Los desayunos en pijama, las tardes de solo ver al cielo, las noches compartiendo nuestro dia</p>
+                                <p>Empezamos a crear nuestro propio lenguaje: esos gestos que solo nosotros entendemos, esas miradas que dicen más que mil palabras, ese espacio que ya sentíamos como "nuestro".</p>
+                                <div class="month-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-value">+10</div>
+                                        <div class="stat-label">Películas vistas</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">+1</div>
+                                        <div class="stat-label">Recetas nuevas</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">∞</div>
+                                        <div class="stat-label">Abrazos dados</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="memory-footer">
+                            <div class="tradition">
+                                <i class="fas fa-star"></i>
+                                <span>Tradición: Los sabados de arrunchis en mi casa</span>
+                            </div>
+                            <div class="memory">
+                                <i class="fas fa-memory"></i>
+                                <span>Recuerdo: El día que cocinamos y bailamos de fondo con Romeo Santos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== MES 4: DICIEMBRE 2025 ========== -->
+            <div class="memory-page" data-page="4" data-month="4">
+                <div class="memory-content">
+                    <div class="memory-header month-4">
+                        <div class="month-badge">Mes 4</div>
+                        <h2><i class="fas fa-holiday"></i> Nuestra Primera Navidad</h2>
+                        <div class="memory-date">Diciembre 2025 - Magia Navideña</div>
+                    </div>
+                    
+                    <div class="memory-body">
+                        <!-- Galería de fotos -->
+                        <div class="photo-gallery">
+                            <div class="gallery-header">
+                                <h3><i class="fas fa-images"></i> Navidad Para Mejorar</h3>
+                                <div class="photo-count">5 momentos unicos</div>
+                            </div>
+                            
+                            <div class="gallery-grid">
+                                <!-- Foto 1 -->
+                                <div class="gallery-item main-photo">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes4/01.jpeg" 
+                                             alt="Nuestra visita al arbol de navidad de Mosquera" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Nuestro primer árbol de todos los municipios que fuimos Mosquera, Madrid y Bojaca🎄</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 2 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes4/02.jpeg" 
+                                             alt="Nuestras velitas de amor eterno" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">No creo que otro momento sea tan magico como prender esas 2 velas eternas que aparecieron en nuestro camino🎁</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 3 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes4/03.jpeg" 
+                                             alt="Viaje a Cota" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Que lindo fue conocer ese arbol contigo mi amor, pero estabas mas hermosa tu, muak</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 4 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes4/04.jpeg" 
+                                             alt="Una de las mil fotos antes de acabar el año" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Tu y yo los mas guapos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 5 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes4/05.jpeg" 
+                                             alt="Siempre hermosa mi bebe" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Yo siempre tomandote fotos a escondidas por que siempre estas hermosa</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Texto del recuerdo -->
+                        <div class="memory-text">
+                            <div class="text-content">
+                                <h4>Un mes para aprender</h4>
+                                <p>Diciembre fue un mes de aprendizaje donde aunque no estuve en las fechas importantes, por primera vez me senti escuchado y entendido de por que no me gustaban estas fechas</p>
+                                <p>Gracias a este mes, me di cuenta de que quiero pasar mis proximas navidades al lado tuyo mi amor, ya que quiero seguir celebrando años a tu lado</p>
+                                <div class="christmas-list">
+                                    <h5>Nuestra primer Diciembre incluyó:</h5>
+                                    <ul>
+                                        <li>🌲 Muchos lugares conocidos</li>
+                                        <li>🎁 Regalos llenos de significado</li>
+                                        <li>🍪 Mucha gastronomia conocida</li>
+                                        <li>🎄 Descubrir la magia de la navidad</li>
+                                        <li>❤️ Mucho, mucho amor</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="memory-footer">
+                            <div class="gift">
+                                <i class="fas fa-gift"></i>
+                                <span>Regalo favorito: Otro mes de poder estar a tu lado</span>
+                            </div>
+                            <div class="wish">
+                                <i class="fas fa-star-and-crescent"></i>
+                                <span>Deseo de año nuevo: Más momentos juntos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== MES 5: ENERO 2026 ========== -->
+            <div class="memory-page" data-page="5" data-month="5">
+                <div class="memory-content">
+                    <div class="memory-header month-5">
+                        <div class="month-badge">Mes 5</div>
+                        <h2><i class="fas fa-rocket"></i> Mirando al Futuro</h2>
+                        <div class="memory-date">Enero 2026 - Creciendo en Amor</div>
+                    </div>
+                    
+                    <div class="memory-body">
+                        <!-- Galería de fotos -->
+                        <div class="photo-gallery">
+                            <div class="gallery-header">
+                                <h3><i class="fas fa-images"></i> Comenzando el Año Juntos</h3>
+                                <div class="photo-count">5 fotos de nuevos comienzos</div>
+                            </div>
+                            
+                            <div class="gallery-grid">
+                                <!-- Foto 1 -->
+                                <div class="gallery-item main-photo">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes5/01.jpeg" 
+                                             alt="Jugando bolos" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Primera salida a jugar bolos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 2 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes5/02.jpeg" 
+                                             alt="Primera noche juntos del 2026" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Nuestra primera noche del año</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 3 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes5/03.jpeg" 
+                                             alt="Enamorado de mi Spider-Man" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Nuevo Peluche hermoso</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 4 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes5/04.jpeg" 
+                                             alt="Amigaso del consentido" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Cada mes tengo mas confianza con tus amores</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Foto 5 -->
+                                <div class="gallery-item">
+                                    <div class="photo-wrapper">
+                                        <img src="assets/meses/mes5/05.jpeg" 
+                                             alt="Futuro juntos" 
+                                             class="gallery-image"
+                                             loading="lazy">
+                                        <div class="photo-overlay">
+                                            <span class="photo-label">Dandonos todo nuestro amor</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Texto del recuerdo -->
+                        <div class="memory-text">
+                            <div class="text-content">
+                                <h4>5 meses y contando...</h4>
+                                <p>Enero marca nuestro quinto mes juntos. Mirando atrás, no puedo creer todo lo que hemos vivido en tan poco tiempo. De dos extraños a compañeros de vida, de nervios iniciales a confianza total, de "hola" a "te amo".</p>
+                                <p>Este mes estamos llenos de planes y sueños. Lugares que queremos visitar, metas que queremos alcanzar juntos, momentos que queremos vivir. El futuro se ve brillante a tu lado.</p>
+                                
+                                <div class="future-plans">
+                                    <h5>Nuestros planes para los próximos meses:</h5>
+                                    <div class="plans-grid">
+                                        <div class="plan">
+                                            <i class="fas fa-plane"></i>
+                                            <span>Primer viaje largo</span>
+                                        </div>
+                                        <div class="plan">
+                                            <i class="fas fa-graduation-cap"></i>
+                                            <span>Aprender algo nuevo juntos</span>
+                                        </div>
+                                        <div class="plan">
+                                            <i class="fas fa-home"></i>
+                                            <span>Crear más tradiciones</span>
+                                        </div>
+                                        <div class="plan">
+                                            <i class="fas fa-heart"></i>
+                                            <span>Seguir amándonos más cada día</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="memory-footer special">
+                            <div class="promise">
+                                <i class="fas fa-handshake"></i>
+                                <span>Promesa: Estaré aquí para el mes 6, 12, 60... siempre</span>
+                            </div>
+                            <div class="love-message">
+                                <i class="fas fa-envelope"></i>
+                                <span>Mensaje: Gracias por estos 5 meses perfectos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+         
+    <!-- Modal para galería -->
+    <div class="gallery-modal" id="gallery-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <img class="modal-image" src="" alt="">
+            <button class="modal-nav modal-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="modal-nav modal-next"><i class="fas fa-chevron-right"></i></button>
+            <div class="modal-caption"></div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
